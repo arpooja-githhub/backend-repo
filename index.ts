@@ -16,7 +16,9 @@ app.use(express.json({ limit: "10mb" }));
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 pool.connect((err, client, release) => {
-  if (err) { console.error("❌ DB connection failed:", err.message); process.exit(1); }
+  if (err) {
+  console.error("❌ DB connection failed:", err.message);
+}
   console.log("✅ Database connected");
   release();
 });

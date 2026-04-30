@@ -1,3 +1,4 @@
+// @ts-ignore
 import express from "express";
 import cors from "cors";
 import jwt from "jsonwebtoken";
@@ -23,7 +24,7 @@ const pool = new Pool({
   }
 });
 
-pool.connect((err, client, release) => {
+pool.connect((err: any, client: any, release: any) => {
   if (err) {
   console.error("❌ DB connection failed:", err.message);
 }

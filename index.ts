@@ -6,9 +6,7 @@ import bcrypt from "bcryptjs";
 import pkg from "pg";
 import dotenv from "dotenv";
 
-console.log("🔥 SERVER STARTING...");
-console.log("DB URL:", process.env.DATABASE_URL);
-console.log("JWT:", process.env.JWT_SECRET);
+
 const { Pool } = pkg;
 dotenv.config();
 console.log("DB:", process.env.DATABASE_URL); 

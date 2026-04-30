@@ -272,7 +272,7 @@ app.get("/", async (_, res) => {
     res.status(500).json({ status: "error", db: "disconnected" });
   }
 });
-console.log("DB URL:", process.env.DATABASE_URL);
+
 
 app.use((req, res) => {
   res.status(404).json({ error: `Route ${req.method} ${req.path} not found` });
@@ -283,8 +283,7 @@ const PORT = process.env.PORT || 5000;
 (async () => {
   try {
     console.log("🔥 SERVER STARTING...");
-    console.log("DB:", process.env.DATABASE_URL);
-
+  
     await initDB();
 
     app.listen(PORT, () => {
